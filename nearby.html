@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby - Kubu Tropis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="asset/css/all.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@9.0.2/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="Icon kubutropis" href="https://guestapps.s3-ap-southeast-1.amazonaws.com/website_general_setting/logo/869b5369-be92-436f-9e1e-501f24c66a50_logo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <style>
+        .section-header .image-section{
+            width: 100%;
+            height: 350px;
+            background-image: url('https://guestapps.s3-ap-southeast-1.amazonaws.com/merchant/merchant-image/3eb52f26-ba8f-4821-bf3d-f3f07d87d030_2275167537.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .tittle {
+            text-align: center;
+            width: 100% ;
+        }
+        
+        .main-content {
+            width: 100%;
+        }
+        .tittle h1{
+            padding-top: 50px;
+            padding-bottom: 30px;
+        }
+        .tittle-border {
+            border-bottom: 2px solid #eee;
+        }
+        .image-992 {
+            height: 199px;
+            width: 100%;
+            display: none;
+            background-position: center;
+            background-size: cover;
+        }
+        .text-ct p{
+            color:#777;
+            font-size: 15px;
+            top: 25px;
+            left:-10px;
+            position: relative;
+        }
+        .text-ct h3 {
+            color:#333333; 
+            position: relative; 
+            left: -8px;
+            font-size: 30px;
+        }
+        .card-title-content {
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+        .addres-cd-nearby p{
+            font-size: 14px;
+            position: relative;
+            top:3px;
+            left: 0px;
+        }
+        .addres-cd-nearby a {
+            top:-1px;
+            font-size: 14px;
+            position: relative;
+            top:3px;
+            left: 0px;
+        }
+        .card-title-content i {
+            font-size: 14px;
+            padding: 0px 0px 5px 5px;
+        }
+        .btn-crd-1 {
+            position: relative;
+            top: -70px;
+            left: -10px;
+        }
+        .btn-crd-1 .card-vm-wrap a, .card-vm-wraprm a {
+            left: 0px;
+        }
+        .text-ct {
+            position: relative;
+            top: 80px;
+        }
+        .nearbyContent {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+        footer {
+            top: 30px;
+        }
+        @media (min-width: 992px){
+            @media(max-width: 1200px){
+                .text-ct {
+                    top: 0px !important;
+                }
+                .card-vm-wrap {
+                    right: -13%;
+                }
+                .card-vm-wraprm {
+                    left: 13%;
+                }
+            }
+        }
+        @media (max-width: 992px){
+            .text-ct {
+                position: relative;
+                top: -30px;
+            }
+            .nearbyContent {
+                padding-bottom: 0px;
+                border-bottom: 2px solid #eee;
+            }
+            .nearbyContent .image {
+                display: none !important;
+            }
+            .image-992 {
+                display: inline-block;
+            }
+            .card-title-content {
+                position: relative;
+                top: 20px;
+            }
+            .addres-cd-nearby p,.addres-cd-nearby a{
+                font-size: 14px;
+                position: relative;
+                top: 0;
+                left: 30px;
+            }
+            .card-title-content i {
+                font-size: 14px;
+                padding: 0px 0px 5px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation-wrap">
+        <div class="">
+        
+            <div class="image-nav">
+                <a href="index.html"><img src="https://guestapps.s3-ap-southeast-1.amazonaws.com/website_general_setting/logo/869b5369-be92-436f-9e1e-501f24c66a50_logo.jpg" alt="" height="100px"></a>
+            </div>
+
+            <!-- <div class="maxwidth">
+                <div  class="" onclick="menuToggle()">
+                    <span class="bar-toggle"></span>
+                    <span class="bar-toggle"></span>
+                    <span class="bar-toggle"></span>
+                </div>
+            </div> -->
+            <div class="menu-toggle" onclick="menuToggle()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            
+            <div class="list-nav ">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="rooms.html">ROOMS</a></li>
+                    <li><a href="facilities.html">FACILITIES</a></li>
+                    <li><a href="nearby.html">NEARBY</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="contact.html">CONTACT & LOCATION</a></li>
+                    <li><a href="#">BOOK NOW</a></li>
+                </ul>
+            </div>
+            <div class="backDrop" onclick="offToggle()">
+            </div>
+        </div>
+    </nav>
+    
+    
+
+    <div class="nav-close">
+        <div class="section-header">
+            <div class="image-section"></div>
+        </div>
+        <div class="main-content container">
+            <div class="tittle mx-auto d-block">
+                <h1>NEARBY</h1>
+                <div class="tittle-border"></div>
+            </div>
+            <div class="wrapper-content container">
+                <div class="">
+                    <div class="nearbyContent row">
+                        <div class="col-xl-4 text-ct">
+                            <p>NEARBY</p>
+                            <h3 style="">Gua Gajah</h3>
+                            <div class="col-12 image-992" style="background-image: url('https://guestapps.s3-ap-southeast-1.amazonaws.com/website_page/image/4632cd6c-c1bc-479a-864f-6997d5a628e5_yudsguyf.jpg'); height: 199px; width: 100%;">
+                            </div>
+                            <div class="card-title-content">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div class="col-11 addres-cd-nearby">
+                                        <p>Jalan Raya Goa Gajah, Desa Bedulu, Blahbatuh, Gianyar</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1 ">
+                                        <i class="fa-sharp fa-regular fa-compass"></i>
+                                    </div>
+                                    <div class="col-11 addres-cd-nearby">
+                                        <p>5,8 km from property</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1 ">
+                                        <i class="fa fa-link text-brown ml-2"></i>
+                                    </div>
+                                    <div class="col-11 addres-cd-nearby">
+                                        <a href="#">http://guagajah.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-4-button-card btn-crd-1 row">
+                                <div class="col-6 col-lg-2 col-xl-6 ">
+                                    <div class="card-vm-wrap">
+                                        <a href="">Get Direction</a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-2 col-xl-6 ">
+                                    <div class="card-vm-wraprm">
+                                        <a href="">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image col-xl-8" >
+                            <img src="https://guestapps.s3-ap-southeast-1.amazonaws.com/website_page/image/4632cd6c-c1bc-479a-864f-6997d5a628e5_yudsguyf.jpg" alt="" height="499" width="100%">
+                        </div>
+                    </div>
+                    <div class="nearbyContent row">
+                        <div class="col-xl-4 text-ct">
+                            <p>NEARBY</p>
+                            <h3 style="">Pura Taman Saraswatih</h3>
+                            <div class="col-12 image-992" style="background-image: url('https://guestapps.s3-ap-southeast-1.amazonaws.com/website_page/image/4a13eb51-f0bd-496f-932f-f5c7ac77af07_2275167537.jpg'); height: 199px; width: 100%;">
+                            </div>
+                            <div class="card-title-content">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div class="col-11 addres-cd-nearby">
+                                        <p>Ubud, Gianyar Bali</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1 ">
+                                        <i class="fa-sharp fa-regular fa-compass"></i>
+                                    </div>
+                                    <div class="col-11 addres-cd-nearby">
+                                        <p>2,8 km from property</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1 ">
+                                        <i class="fa fa-link text-brown ml-2"></i>
+                                    </div>
+                                    <div class="col-11 addres-cd-nearby">
+                                        <a href="#">http://kubutropis.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-4-button-card btn-crd-1 row">
+                                <div class="col-6 col-lg-2 col-xl-6 ">
+                                    <div class="card-vm-wrap">
+                                        <a href="">Get Direction</a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-2 col-xl-6 ">
+                                    <div class="card-vm-wraprm">
+                                        <a href="">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image col-xl-8" >
+                            <img src="https://guestapps.s3-ap-southeast-1.amazonaws.com/website_page/image/4a13eb51-f0bd-496f-932f-f5c7ac77af07_2275167537.jpg" alt="" height="499" width="100%">
+                        </div>
+                    </div>
+                    <div class="nearbyContent row">
+                        <div class="col-xl-4 text-ct">
+                            <p>NEARBY</p>
+                            <h3 style="">Monkey Forest Ubud</h3>
+                            <div class="col-12 image-992" style="background-image: url('https://guestapps.s3-ap-southeast-1.amazonaws.com/website_page/image/303a71cf-6981-4c9f-865b-192df509d19b_DSC_8686.jpg'); height: 199px; width: 100%;">
+                            </div>
+                            <div class="card-title-content">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div class="col-11 addres-cd-nearby">
+                                        <p>Jl. Monkey Forest, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1 ">
+                                        <i class="fa-sharp fa-regular fa-compass"></i>
+                                    </div>
+                                    <div class="col-11 addres-cd-nearby">
+                                        <p>1 km from property</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1 ">
+                                        <i class="fa fa-link text-brown ml-2"></i>
+                                    </div>
+                                    <div class="col-11 addres-cd-nearby">
+                                        <a href="#">http://monkeyforest.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-4-button-card btn-crd-1 row">
+                                <div class="col-6 col-lg-2 col-xl-6 ">
+                                    <div class="card-vm-wrap">
+                                        <a href="">Get Direction</a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-2 col-xl-6 ">
+                                    <div class="card-vm-wraprm">
+                                        <a href="">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image col-xl-8" >
+                            <img src="https://guestapps.s3-ap-southeast-1.amazonaws.com/website_page/image/303a71cf-6981-4c9f-865b-192df509d19b_DSC_8686.jpg" alt="" height="499" width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="">
+        <div class="container-md footer-content">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                    <div class="info">
+                        <h5 class="title">Kubu Tropis</h5>
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="col-10">
+                                Kubu Tropis, Jl. Bisma, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="col-10">
+                                <p>Phone : <br> 6282236595435</p>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="col-10">
+                                <p>kubutropis@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-2 content-footer">
+                    <h5 class="title">About</h5>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="facilities.html">Facilities</a></li>
+                            <li><a href="contact.html">Contact & Location</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-2 content-footer">
+                    <h5 class="title">ROOMS</h5>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Deluxe</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-2 content-footer">
+                    <h5 class="title">Nearby</h5>
+                    <nav>
+                        <ul>
+                            <li><a href="nearby/gua-gajah.html">Gua Gajah</a></li>
+                            <li><a href="nearby/pura-taman-saraswati.html">Pura Taman Saraswati</a></li>
+                            <li><a href="nearby/monkey-forest-ubud.html">Monkey Forest Ubud</a></li>
+                            <li><a href="nearby.html">SHOW ALL</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-2 content-footer">
+                    <h5 class="title">Follow Us On</h5>
+                    <nav>
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+                            <li><a href="#"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">
+                Copyright ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                            
+                <a href="https://www.guestpro.id/">Kubu Tropis</a>. All Rights Reserved.
+                <a href="https://www.guestpro.id/">GuestPro</a> - Integrated Tourism Solutions
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 60) {
+                $('.navigation-wrap').addClass('scrolled');
+                $('.list-nav').addClass('list-active');
+                $('.image-nav').addClass('image-nav-scrolled');
+                $('.menu-toggle').addClass('cg-clr-bar');
+            }else{
+                $('.navigation-wrap').removeClass('scrolled');
+                $('.list-nav').removeClass('list-active');
+                $('.image-nav').removeClass('image-nav-scrolled');
+                $('.menu-toggle').removeClass('cg-clr-bar');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</body>
+</html>

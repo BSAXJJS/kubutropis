@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Location - Kubu Tropis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="asset/css/all.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@9.0.2/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="Icon kubutropis" href="https://guestapps.s3-ap-southeast-1.amazonaws.com/website_general_setting/logo/869b5369-be92-436f-9e1e-501f24c66a50_logo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <style>
+        .section-header .image-section{
+            background-image: url('https://guestapps.s3-ap-southeast-1.amazonaws.com/merchant/merchant-image/cd7dc64c-32a3-4b50-a384-e75943160910_232932546.jpg');
+        }
+        footer {
+            position: relative;
+            top: 340px;
+        }
+        .map-kubutropis {
+            position: relative;
+            top:340px;
+        }
+        .main-content {
+            position: relative;
+            top: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-weight: 600;
+        }
+        .tittle div {
+            position: relative;
+            width: 30%;
+            left: 35%;
+            border-bottom: 2px solid #eee;
+        }
+        .main-content .content {
+            position: relative;
+            top: 50px;
+        }
+        textarea {
+            width: 100%;
+            height: 180px;
+            border-radius: 5px;
+            border:1px solid #d0cdbc;
+            transition: all 0.3s ease-in-out;
+        }
+        .send-captcha {
+            position: relative;
+            top: 100px;
+        }
+        .main-content input {
+            border-radius: 5px;
+            width: 100%;
+            height: 40px;
+            border:1px solid #d0cdbc;
+            transition: all 0.3s ease-in-out;
+        }
+        .content h4 {
+            padding-top: 30px;
+            color: #333;
+        }
+        .content p, .content a{
+            text-decoration: none;
+            color: #777777;
+            padding-bottom: 13px;
+        }
+        .data-input p{
+            padding: 0;
+            margin-bottom: 0;
+        }
+        .data-input div {
+            height: 95px;
+        }
+        textarea:focus, input:focus {
+            outline:none;
+            border: 1px solid #70706f;
+        }
+        .data-input input::placeholder,.data-input textarea::placeholder {
+            color: #dde0e9;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+
+        button {
+            position: relative;
+            left: 5%;
+            display: inline-block;
+            width: 140px;
+            height: 50px;
+            background-color: #7fda30 !important;
+            overflow: hidden;
+            border-radius: 0px !important;
+        }
+        button i {
+            color: white;
+            transform: translate(100px, -30px);
+            font-size: 20px;
+            transition: all .3s ease-in-out;
+        }
+        button p {
+            color: white !important;
+            transition: all .3s ease-in-out;
+        }
+        button:hover i {
+            transform: translate(35px, -30px);
+        }
+        button:hover p {
+            transform: translateX(-10px);
+        }
+        button:hover {
+            background-color: #6fbf2a !important;
+        }
+
+        @media (max-width: 768px) {
+            .main-content{
+                text-align: center;;
+            }
+        }
+        @media (max-width: 992px){
+            footer {
+                position: relative;
+                top: 680px;
+            }
+            .map-kubutropis {
+                position: relative;
+                top:680px;
+            }
+            
+            .data-input {
+                position: relative;;
+                top: 25px;
+            }
+        }
+        @media (min-width: 992px){
+            div button {
+                position: relative;
+                left: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation-wrap">
+        <div class="">
+        
+            <div class="image-nav">
+                <a href="index.html"><img src="https://guestapps.s3-ap-southeast-1.amazonaws.com/website_general_setting/logo/869b5369-be92-436f-9e1e-501f24c66a50_logo.jpg" alt="" height="100px"></a>
+            </div>
+
+            <!-- <div class="maxwidth">
+                <div  class="" onclick="menuToggle()">
+                    <span class="bar-toggle"></span>
+                    <span class="bar-toggle"></span>
+                    <span class="bar-toggle"></span>
+                </div>
+            </div> -->
+            <div class="menu-toggle" onclick="menuToggle()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            
+            <div class="list-nav ">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="rooms.html">ROOMS</a></li>
+                    <li><a href="facilities.html">FACILITIES</a></li>
+                    <li><a href="nearby.html">NEARBY</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="contact.html">CONTACT & LOCATION</a></li>
+                    <li><a href="#">BOOK NOW</a></li>
+                </ul>
+            </div>
+            <div class="backDrop" onclick="offToggle()">
+            </div>
+        </div>
+    </nav>
+    <div class="nav-close">
+        <div class="section-header">
+            <div class="image-section">
+            </div>
+        </div>
+        <div class="main-content container">
+            <div class="tittle">
+                <h1>SEND US MESSAGE</h1>
+                <div class="tittle-border"></div>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-12 col-lg-4 title-content">
+                        <div class="address">
+                            <h4>Address</h4>
+                            <p>Kubu Tropis, Jl. Bisma, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia</p>
+                        </div>
+                        <div class="phone">
+                            <h4>Phone</h4>
+                            <p>6282236595435</p>
+                        </div>
+                        <div class="email">
+                            <h4>Email</h4>
+                            <a href="mailto:kubutropis@gmail.com">kubutropis@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8 data-input">
+                        <div class="row">
+                            <div class="name col-12 col-lg-6">
+                                <p for="name">Your Full Name</p>
+                                <input type="text" name="name" id="" placeholder="Michael Jordan">
+                            </div>
+                            <div class="email col-12 col-lg-6">
+                                <p for="email">Your Email</p>
+                                <input type="text" name="email" id="" placeholder="michael.j@gmail.com">
+                            </div>
+                            <div class="subject col-12">
+                                <p for="subject">Subject</p>
+                                <input type="text" name="subject" id="" placeholder="Say hi to you">
+                            </div>
+                            <div class="subject col-12">
+                                <textarea name="message" id="" placeholder="Here you can write your nice text" rows="10"></textarea>
+                            </div>
+                            <div class="col-md-12 send-captcha">
+                                <div>
+                                    <div class="g-recaptcha" data-sitekey="6LcX7dAUAAAAAIMN243D3r632eJWHqf22wbFbmci"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcX7dAUAAAAAIMN243D3r632eJWHqf22wbFbmci&amp;co=aHR0cHM6Ly9rdWJ1dHJvcGlzLmNvbTo0NDM.&amp;hl=en&amp;v=8G7OPK94bhCRbT0VqyEVpQNj&amp;size=normal&amp;cb=kw0zqg5kfhrm" width="304" height="78" role="presentation" name="a-nqy4skdbw32c" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+                                    <div class="">
+                                        <button type="submit" id="btn_submit" class="btn btn-lg btn-black btn-contact">
+                                        <p>SEND</p> <i class="fa fa-paper-plane"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-kubutropis">
+            <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.887211987683!2d115.2570263147829!3d-8.510330993881679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d13693f25e1%3A0xa06802da3ba5b96f!2sKubu%20Tropis!5e0!3m2!1sen!2sid!4v1622002557522!5m2!1sen!2sid" height="570" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+        </div>
+    </div>
+
+    
+
+    <footer class="">
+        <div class="container-md footer-content">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                    <div class="info">
+                        <h5 class="title">Kubu Tropis</h5>
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="col-10">
+                                Kubu Tropis, Jl. Bisma, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="col-10">
+                                <p>Phone : <br> 6282236595435</p>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="col-10">
+                                <p>kubutropis@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-2 content-footer">
+                    <h5 class="title">About</h5>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="facilities.html">Facilities</a></li>
+                            <li><a href="contact.html">Contact & Location</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-2 content-footer">
+                    <h5 class="title">ROOMS</h5>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Deluxe</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-2 content-footer">
+                    <h5 class="title">Nearby</h5>
+                    <nav>
+                        <ul>
+                            <li><a href="nearby/gua-gajah.html">Gua Gajah</a></li>
+                            <li><a href="nearby/pura-taman-saraswati.html">Pura Taman Saraswati</a></li>
+                            <li><a href="nearby/monkey-forest-ubud.html">Monkey Forest Ubud</a></li>
+                            <li><a href="nearby.html">SHOW ALL</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-2 content-footer">
+                    <h5 class="title">Follow Us On</h5>
+                    <nav>
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+                            <li><a href="#"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">
+                Copyright ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                            
+                <a href="https://www.guestpro.id/">Kubu Tropis</a>. All Rights Reserved.
+                <a href="https://www.guestpro.id/">GuestPro</a> - Integrated Tourism Solutions
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 60) {
+                $('.navigation-wrap').addClass('scrolled');
+                $('.list-nav').addClass('list-active');
+                $('.image-nav').addClass('image-nav-scrolled');
+                $('.menu-toggle').addClass('cg-clr-bar');
+            }else{
+                $('.navigation-wrap').removeClass('scrolled');
+                $('.list-nav').removeClass('list-active');
+                $('.image-nav').removeClass('image-nav-scrolled');
+                $('.menu-toggle').removeClass('cg-clr-bar');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</body>
+</html>

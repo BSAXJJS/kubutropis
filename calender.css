@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Poppins', sans-serif;
+}
+.wrapper-calender{
+    display: none ;
+    transform: translate(460px, -355px);
+    z-index: 10;
+    position: absolute;
+    width: 200px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    -webkit-transform: translate(460px, -355px);
+    -moz-transform: translate(460px, -355px);
+    -ms-transform: translate(460px, -355px);
+    -o-transform: translate(460px, -355px);
+}
+.wrapper-calender header{
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    justify-content: space-between;
+}
+.wrapper-calender header .icons{
+    display: flex;
+}
+.wrapper-calender header .icons span{
+    position: relative;
+    width: 31px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    font-size: 1.3rem;
+    user-select: none;
+    border-radius: 50%;
+}
+.wrapper-calender header .icons span:hover{
+    background: #f2f2f2;
+}
+.wrapper-calender header .current-date{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.calendar{
+    padding: 7px;
+}
+.calendar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+}
+.calendar .days{
+    margin-bottom: 7px;
+}
+.calendar li{
+    color: #333;
+    width: calc(100% / 7);
+    font-size: .7rem;
+}
+.calendar .weeks li{
+    font-weight: 500;
+    cursor: default;
+}
+.calendar .days{
+        margin-top: 7px;
+}
+.calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    line-height: 25.56px;
+}
+.days li.inactive{
+    color: #aaa;
+}
+.days li.active{
+    color: #fff;
+}
+.days li::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.days li.active::before{
+    background: #9B59B6;
+}
+.days li:not(.active):hover::before{
+    background: #f2f2f2;
+}
+.wrapper-calender ol, .wrapper-calender ul {
+    padding-left: 0;
+}
+.days li p,.current-date  {
+    margin-bottom: 0;
+}
